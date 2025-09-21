@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+    <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+  </edmx:Reference>
   <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
     <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
   </edmx:Reference>
@@ -396,31 +399,42 @@
             </PropertyValue>
           </Record>
         </Annotation>
-        <Annotation Term="UI.DataPoint" Qualifier="MAR">
-          <Record Type="UI.DataPointType">
-            <PropertyValue Property="Value" Path="MAR"/>
-            <PropertyValue Property="Title" String="MAR"/>
-          </Record>
+        <Annotation Term="UI.SelectionFields">
+          <Collection>
+            <PropertyPath>L4Process</PropertyPath>
+            <PropertyPath>VS</PropertyPath>
+            <PropertyPath>MAR</PropertyPath>
+            <PropertyPath>MARDesc</PropertyPath>
+            <PropertyPath>roles/ER</PropertyPath>
+            <PropertyPath>roles/DAR</PropertyPath>
+            <PropertyPath>roles/DARDesc</PropertyPath>
+            <PropertyPath>roles/OrgSet</PropertyPath>
+            <PropertyPath>roles/Persona</PropertyPath>
+          </Collection>
         </Annotation>
-        <Annotation Term="UI.DataPoint" Qualifier="MARDesc">
-          <Record Type="UI.DataPointType">
-            <PropertyValue Property="Value" Path="MARDesc"/>
-            <PropertyValue Property="Title" String="MARDesc"/>
+      </Annotations>
+      <Annotations Target="bygl.ena.pumrpSrv.EntityContainer/pumrphead">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
           </Record>
-        </Annotation>
-        <Annotation Term="UI.DataPoint" Qualifier="VS">
-          <Record Type="UI.DataPointType">
-            <PropertyValue Property="Value" Path="VS"/>
-            <PropertyValue Property="Title" String="VS"/>
-          </Record>
-        </Annotation>
-        <Annotation Term="UI.HeaderFacets">
-          <Collection/>
         </Annotation>
       </Annotations>
       <Annotations Target="bygl.ena.pumrpSrv.pumrphead/ID">
         <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
         <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+      </Annotations>
+      <Annotations Target="bygl.ena.pumrpSrv.pumrphead/L4Process">
+        <Annotation Term="Common.Label" String="L4 Process ID"/>
+      </Annotations>
+      <Annotations Target="bygl.ena.pumrpSrv.pumrphead/VS">
+        <Annotation Term="Common.Label" String="Value Stream"/>
+      </Annotations>
+      <Annotations Target="bygl.ena.pumrpSrv.pumrphead/MAR">
+        <Annotation Term="Common.Label" String="Master Role"/>
+      </Annotations>
+      <Annotations Target="bygl.ena.pumrpSrv.pumrphead/MARDesc">
+        <Annotation Term="Common.Label" String="Master Role Description"/>
       </Annotations>
       <Annotations Target="bygl.ena.pumrpSrv.pumrpline">
         <Annotation Term="UI.Facets">
@@ -462,9 +476,33 @@
           </Record>
         </Annotation>
       </Annotations>
+      <Annotations Target="bygl.ena.pumrpSrv.EntityContainer/pumrpline">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
       <Annotations Target="bygl.ena.pumrpSrv.pumrpline/ID">
         <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
         <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+      </Annotations>
+      <Annotations Target="bygl.ena.pumrpSrv.pumrpline/DAR">
+        <Annotation Term="Common.Text" Path="DARDesc"/>
+        <Annotation Term="Common.Label" String="Derived Role ID"/>
+      </Annotations>
+      <Annotations Target="bygl.ena.pumrpSrv.pumrpline/DARDesc">
+        <Annotation Term="Common.Label" String="Derived Role"/>
+        <Annotation Term="Common.ExternalID" Path="DAR"/>
+      </Annotations>
+      <Annotations Target="bygl.ena.pumrpSrv.pumrpline/OrgSet">
+        <Annotation Term="Common.Label" String="Org Set"/>
+      </Annotations>
+      <Annotations Target="bygl.ena.pumrpSrv.pumrpline/ER">
+        <Annotation Term="Common.Label" String="Enterprise Role"/>
+      </Annotations>
+      <Annotations Target="bygl.ena.pumrpSrv.pumrpline/Persona">
+        <Annotation Term="Common.Label" String="Persona"/>
       </Annotations>
       <Annotations Target="bygl.ena.pumrpSrv.DraftAdministrativeData">
         <Annotation Term="Common.Label" String="{i18n>Draft_DraftAdministrativeData}"/>
