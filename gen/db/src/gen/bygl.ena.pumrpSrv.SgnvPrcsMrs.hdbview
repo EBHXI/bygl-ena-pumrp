@@ -1,0 +1,16 @@
+VIEW bygl_ena_pumrpSrv_SgnvPrcsMrs AS SELECT
+  SgnvPrcsMrs_0.ID,
+  SgnvPrcsMrs_0.createdAt,
+  SgnvPrcsMrs_0.createdBy,
+  SgnvPrcsMrs_0.modifiedAt,
+  SgnvPrcsMrs_0.modifiedBy,
+  SgnvPrcsMrs_0.L2Process,
+  SgnvPrcsMrs_0.L2Desc,
+  SgnvPrcsMrs_0.L3Process,
+  SgnvPrcsMrs_0.L3Desc,
+  SgnvPrcsMrs_0.L4Process,
+  SgnvPrcsMrs_0.L4Desc,
+  SgnvPrcsMrs_0.VS,
+  SgnvPrcsMrs_0.MAR,
+  SgnvPrcsMrs_0.MARDesc
+FROM bygl_ena_pumrp_SgnvPrcsMrs AS SgnvPrcsMrs_0

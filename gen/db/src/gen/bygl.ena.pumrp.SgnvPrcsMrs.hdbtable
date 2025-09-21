@@ -1,0 +1,17 @@
+COLUMN TABLE bygl_ena_pumrp_SgnvPrcsMrs (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  L2Process NVARCHAR(30),
+  L2Desc NVARCHAR(70),
+  L3Process NVARCHAR(30),
+  L3Desc NVARCHAR(70),
+  L4Process NVARCHAR(30),
+  L4Desc NVARCHAR(80),
+  VS NVARCHAR(6),
+  MAR NVARCHAR(40),
+  MARDesc NVARCHAR(100),
+  PRIMARY KEY(ID)
+)

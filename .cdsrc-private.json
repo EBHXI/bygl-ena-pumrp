@@ -1,0 +1,20 @@
+{
+  "requires": {
+    "[hybrid]": {
+      "db": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.eu20.hana.ondemand.com",
+          "org": "by-core-v0d",
+          "space": "XsApps",
+          "instance": "bygl-ena-pumrp-db",
+          "key": "bygl-ena-pumrp-db-key"
+        },
+        "kind": "hana",
+        "vcap": {
+          "name": "db"
+        }
+      }
+    }
+  }
+}

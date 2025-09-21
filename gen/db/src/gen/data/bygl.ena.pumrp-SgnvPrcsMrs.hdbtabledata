@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "BYGL_ENA_PUMRP_SGNVPRCSMRS",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "bygl.ena.pumrp-SgnvPrcsMrs.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ","
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "L2PROCESS",
+          "L2DESC",
+          "L3PROCESS",
+          "L3DESC",
+          "L4PROCESS",
+          "L4DESC",
+          "VS",
+          "MAR",
+          "MARDESC"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ID": "ID",
+        "L2PROCESS": "L2Process",
+        "L2DESC": "L2Desc",
+        "L3PROCESS": "L3Process",
+        "L3DESC": "L3Desc",
+        "L4PROCESS": "L4Process",
+        "L4DESC": "L4Desc",
+        "VS": "VS",
+        "MAR": "MAR",
+        "MARDESC": "MARDesc"
+      }
+    }
+  ]
+}

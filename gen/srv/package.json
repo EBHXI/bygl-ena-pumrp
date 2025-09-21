@@ -1,0 +1,45 @@
+{
+  "name": "bygl-ena-pumrp",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/hana": "^2",
+    "@sap/cds": "^9.3.1",
+    "@sap/xssec": "^4",
+    "express": "^4",
+    "npm-install-global": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.13.0",
+    "@cap-js/sqlite": "^2",
+    "@sap/cds-dk": ">=8",
+    "mbt": "^1.2.29",
+    "rimraf": "^5.0.5"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-pumrpapp": "cds watch --open bygl.ena.pumrpapp/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "undeploy": "cf undeploy bygl-ena-pumrp --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+  },
+  "cds": {
+    "requires": {
+      "[production]": {
+        "auth": "dummy"
+      },
+      "connectivity": true,
+      "destinations": true
+    }
+  },
+  "sapux": [
+    "app/pumrpapp",
+    "app/pumrpapp"
+  ]
+}

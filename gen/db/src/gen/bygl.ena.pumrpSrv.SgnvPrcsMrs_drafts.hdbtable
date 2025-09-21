@@ -1,0 +1,21 @@
+COLUMN TABLE bygl_ena_pumrpSrv_SgnvPrcsMrs_drafts (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP NULL,
+  createdBy NVARCHAR(255) NULL,
+  modifiedAt TIMESTAMP NULL,
+  modifiedBy NVARCHAR(255) NULL,
+  L2Process NVARCHAR(30) NULL,
+  L2Desc NVARCHAR(70) NULL,
+  L3Process NVARCHAR(30) NULL,
+  L3Desc NVARCHAR(70) NULL,
+  L4Process NVARCHAR(30) NULL,
+  L4Desc NVARCHAR(80) NULL,
+  VS NVARCHAR(6) NULL,
+  MAR NVARCHAR(40) NULL,
+  MARDesc NVARCHAR(100) NULL,
+  IsActiveEntity BOOLEAN,
+  HasActiveEntity BOOLEAN,
+  HasDraftEntity BOOLEAN,
+  DraftAdministrativeData_DraftUUID NVARCHAR(36) NOT NULL,
+  PRIMARY KEY(ID)
+)

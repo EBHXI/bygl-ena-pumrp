@@ -1,0 +1,8 @@
+VIEW bygl_ena_pumrpSrv_pumrphead AS SELECT
+  pumrphead_0.ID,
+  pumrphead_0.L4Process,
+  pumrphead_0.L4Desc,
+  pumrphead_0.VS,
+  pumrphead_0.MAR,
+  pumrphead_0.MARDesc
+FROM bygl_ena_pumrp_pumrphead AS pumrphead_0

@@ -1,0 +1,13 @@
+VIEW bygl_ena_pumrpSrv_MrDrErs AS SELECT
+  MrDrErs_0.ID,
+  MrDrErs_0.createdAt,
+  MrDrErs_0.createdBy,
+  MrDrErs_0.modifiedAt,
+  MrDrErs_0.modifiedBy,
+  MrDrErs_0.MAR,
+  MrDrErs_0.DAR,
+  MrDrErs_0.DARDesc,
+  MrDrErs_0.OrgSet,
+  MrDrErs_0.ER,
+  MrDrErs_0.Persona
+FROM bygl_ena_pumrp_MrDrErs AS MrDrErs_0

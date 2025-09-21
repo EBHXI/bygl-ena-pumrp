@@ -1,0 +1,14 @@
+COLUMN TABLE bygl_ena_pumrp_MrDrErs (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  MAR NVARCHAR(40),
+  DAR NVARCHAR(50),
+  DARDesc NVARCHAR(100),
+  OrgSet NVARCHAR(80),
+  ER NVARCHAR(100),
+  Persona NVARCHAR(50),
+  PRIMARY KEY(ID)
+)

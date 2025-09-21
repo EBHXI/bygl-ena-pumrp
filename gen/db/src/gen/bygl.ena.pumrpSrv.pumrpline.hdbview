@@ -1,0 +1,9 @@
+VIEW bygl_ena_pumrpSrv_pumrpline AS SELECT
+  pumrpline_0.ID,
+  pumrpline_0.MAR,
+  pumrpline_0.DAR,
+  pumrpline_0.DARDesc,
+  pumrpline_0.OrgSet,
+  pumrpline_0.ER,
+  pumrpline_0.Persona
+FROM bygl_ena_pumrp_pumrpline AS pumrpline_0

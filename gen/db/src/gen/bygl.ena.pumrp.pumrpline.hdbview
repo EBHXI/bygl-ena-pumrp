@@ -1,0 +1,9 @@
+VIEW bygl_ena_pumrp_pumrpline AS SELECT
+  role_0.ID,
+  role_0.MAR,
+  role_0.DAR,
+  role_0.DARDesc,
+  role_0.OrgSet,
+  role_0.ER,
+  role_0.Persona
+FROM bygl_ena_pumrp_MrDrErs AS role_0

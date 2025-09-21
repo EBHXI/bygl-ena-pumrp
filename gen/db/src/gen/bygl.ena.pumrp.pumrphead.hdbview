@@ -1,0 +1,8 @@
+VIEW bygl_ena_pumrp_pumrphead AS SELECT
+  procs_0.ID,
+  procs_0.L4Process,
+  procs_0.L4Desc,
+  procs_0.VS,
+  procs_0.MAR,
+  procs_0.MARDesc
+FROM bygl_ena_pumrp_SgnvPrcsMrs AS procs_0

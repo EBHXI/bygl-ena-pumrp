@@ -1,0 +1,10 @@
+VIEW bygl_ena_pumrpSrv_ErCntryCWIDs AS SELECT
+  ErCntryCWIDs_0.ID,
+  ErCntryCWIDs_0.createdAt,
+  ErCntryCWIDs_0.createdBy,
+  ErCntryCWIDs_0.modifiedAt,
+  ErCntryCWIDs_0.modifiedBy,
+  ErCntryCWIDs_0.ER,
+  ErCntryCWIDs_0.CWID,
+  ErCntryCWIDs_0.Country
+FROM bygl_ena_pumrp_ErCntryCWIDs AS ErCntryCWIDs_0
