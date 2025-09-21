@@ -906,22 +906,37 @@
       "@UI.HeaderInfo.Description.Value": {
         "=": "MARDesc"
       },
-      "@UI.DataPoint#MAR.$Type": "UI.DataPointType",
-      "@UI.DataPoint#MAR.Value": {
-        "=": "MAR"
-      },
-      "@UI.DataPoint#MAR.Title": "MAR",
-      "@UI.DataPoint#MARDesc.$Type": "UI.DataPointType",
-      "@UI.DataPoint#MARDesc.Value": {
-        "=": "MARDesc"
-      },
-      "@UI.DataPoint#MARDesc.Title": "MARDesc",
-      "@UI.DataPoint#VS.$Type": "UI.DataPointType",
-      "@UI.DataPoint#VS.Value": {
-        "=": "VS"
-      },
-      "@UI.DataPoint#VS.Title": "VS",
-      "@UI.HeaderFacets": [],
+      "@UI.SelectionFields": [
+        {
+          "=": "L4Process"
+        },
+        {
+          "=": "VS"
+        },
+        {
+          "=": "MAR"
+        },
+        {
+          "=": "MARDesc"
+        },
+        {
+          "=": "roles.ER"
+        },
+        {
+          "=": "roles.DAR"
+        },
+        {
+          "=": "roles.DARDesc"
+        },
+        {
+          "=": "roles.OrgSet"
+        },
+        {
+          "=": "roles.Persona"
+        }
+      ],
+      "@Capabilities.DeleteRestrictions.$Type": "Capabilities.DeleteRestrictionsType",
+      "@Capabilities.DeleteRestrictions.Deletable": false,
       "projection": {
         "from": {
           "ref": [
@@ -936,6 +951,7 @@
           "type": "cds.UUID"
         },
         "L4Process": {
+          "@Common.Label": "L4 Process ID",
           "type": "cds.String",
           "length": 30
         },
@@ -944,14 +960,17 @@
           "length": 80
         },
         "VS": {
+          "@Common.Label": "Value Stream",
           "type": "cds.String",
           "length": 6
         },
         "MAR": {
+          "@Common.Label": "Master Role",
           "type": "cds.String",
           "length": 40
         },
         "MARDesc": {
+          "@Common.Label": "Master Role Description",
           "type": "cds.String",
           "length": 100
         },
@@ -1023,6 +1042,8 @@
       "@UI.HeaderInfo.Title.Value": {
         "=": "ER"
       },
+      "@Capabilities.DeleteRestrictions.$Type": "Capabilities.DeleteRestrictionsType",
+      "@Capabilities.DeleteRestrictions.Deletable": false,
       "projection": {
         "from": {
           "ref": [
@@ -1041,22 +1062,33 @@
           "length": 40
         },
         "DAR": {
+          "@Common.Text": {
+            "=": "DARDesc"
+          },
+          "@Common.Label": "Derived Role ID",
           "type": "cds.String",
           "length": 50
         },
         "DARDesc": {
+          "@Common.Label": "Derived Role",
+          "@Common.ExternalID": {
+            "=": "DAR"
+          },
           "type": "cds.String",
           "length": 100
         },
         "OrgSet": {
+          "@Common.Label": "Org Set",
           "type": "cds.String",
           "length": 80
         },
         "ER": {
+          "@Common.Label": "Enterprise Role",
           "type": "cds.String",
           "length": 100
         },
         "Persona": {
+          "@Common.Label": "Persona",
           "type": "cds.String",
           "length": 50
         },

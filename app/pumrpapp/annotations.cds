@@ -67,24 +67,17 @@ annotate service.pumrphead with @(
             Value : MARDesc,
         },
     },
-    UI.DataPoint #MAR : {
-        $Type : 'UI.DataPointType',
-        Value : MAR,
-        Title : 'MAR',
-    },
-    UI.DataPoint #MARDesc : {
-        $Type : 'UI.DataPointType',
-        Value : MARDesc,
-        Title : 'MARDesc',
-    },
-    UI.DataPoint #VS : {
-        $Type : 'UI.DataPointType',
-        Value : VS,
-        Title : 'VS',
-    },
-    UI.HeaderFacets : [
-        
-    ]
+    UI.SelectionFields : [
+        L4Process,
+        VS,
+        MAR,
+        MARDesc,
+        roles.ER,
+        roles.DAR,
+        roles.DARDesc,
+        roles.OrgSet,
+        roles.Persona,
+    ],
 );
 
 annotate service.ErCntryCWIDs with @(
@@ -146,3 +139,50 @@ annotate service.pumrpline with @(
         }
     },
 );
+annotate service.pumrphead with {
+    VS @Common.Label : 'Value Stream'
+};
+
+annotate service.pumrphead with {
+    L4Process @Common.Label : 'L4 Process ID'
+};
+
+annotate service.pumrphead with {
+    MAR @Common.Label : 'Master Role'
+};
+
+annotate service.pumrpline with {
+    ER @Common.Label : 'Enterprise Role'
+};
+
+annotate service.pumrpline with {
+    OrgSet @Common.Label : 'Org Set'
+};
+
+annotate service.pumrphead with {
+    MARDesc @Common.Label : 'Master Role Description'
+};
+
+annotate service.pumrpline with {
+    DARDesc @(
+        Common.Label : 'Derived Role',
+        Common.ExternalID : DAR,
+    )
+};
+
+annotate service.pumrpline with {
+    DAR @(
+        Common.Text : DARDesc,
+        Common.Label : 'Derived Role ID',
+    )
+};
+
+annotate service.pumrpline with {
+    Persona @Common.Label : 'Persona'
+};
+
+    annotate service.pumrphead with @(Capabilities.DeleteRestrictions: 
+    { $Type: 'Capabilities.DeleteRestrictionsType', Deletable: false });
+
+    annotate service.pumrpline with @(Capabilities.DeleteRestrictions: 
+    { $Type: 'Capabilities.DeleteRestrictionsType', Deletable: false });
