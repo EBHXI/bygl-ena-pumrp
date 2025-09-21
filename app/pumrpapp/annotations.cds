@@ -186,3 +186,4 @@ annotate service.pumrpline with {
 
     annotate service.pumrpline with @(Capabilities.DeleteRestrictions: 
     { $Type: 'Capabilities.DeleteRestrictionsType', Deletable: false });
+
